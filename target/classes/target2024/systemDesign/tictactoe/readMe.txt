@@ -1,9 +1,24 @@
-Functional Requirements:
-	- Players with X and O
-	- Game ends either in draw or win if 3 found
+Tic-tac-toe
 
-Core Entities:
-	- Board
-	- Players
-	- Service
-	- Game
+Functional Requirements:
+	- 2 users
+	- Alternate turns
+	- 3 * 3 board
+	- X and O
+	- Game ends in win / loss / draw
+	
+
+Non-Functional Requirements:
+	- OOS
+	
+
+High Level Design:
+	- Core Entities:
+		- User
+		- Board
+		- Game
+		- GameStatus
+		- GamingService
+		- Demo (Impl class)
+		
+	

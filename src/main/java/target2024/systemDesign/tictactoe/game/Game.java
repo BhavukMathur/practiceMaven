@@ -1,41 +1,39 @@
 package target2024.systemDesign.tictactoe.game;
 
-import java.util.Scanner;
+import java.util.UUID;
 
-import target2024.systemDesign.tictactoe.Board;
+import lombok.Getter;
+import lombok.Setter;
 import target2024.systemDesign.tictactoe.User;
 
+@Getter
 public class Game {
-	User user1;
-	User user2;
-	User currentPlayer;
+	String id;
 	Board board;
+	User xUser;
+	User oUser;
+	User currentUser;
+	Character currentSymbol;
+	@Setter
 	GameStatus status;
 	
-	public Game(User user1, User user2, Board board) {
-		this.user1 = user1;
-		this.user2 = user2;
-		this.board = board;
-		this.status = GameStatus.NEW;
-		this.currentPlayer = user1;
+	public Game(User xUser, User oUser) {
+		this.id = UUID.randomUUID().toString();
+		this.board = new Board();
+		this.xUser = xUser;
+		this.oUser = oUser;
+		this.currentUser = xUser;
+		this.currentSymbol = 'X'; 
+		this.status = GameStatus.IN_PROGRESS;
 	}
 	
-	public void play() {
-	    Scanner scanner = new Scanner(System.in);
-	    this.status = GameStatus.IN_PROGRESS;
-	    User currentPlayer = user1;
-
-	    //TODO
-	    while (status == GameStatus.IN_PROGRESS) {
-	        board.printBoard();
-	        System.out.println("Current player: " + currentPlayer.getName() + " (" + currentPlayer.getCh() + ")");
-	        System.out.print("Enter row and column (0, 1, 2): ");
-	        
-	        int row = scanner.nextInt();
-	        int col = scanner.nextInt();
-	        
-	        this.currentPlayer = currentPlayer == user1 ? user2 : user1; 		//Toggle between users
-	    }
-	}
-
+	public void toggleCurrentTurn() {
+		if(currentSymbol == 'X') {
+			currentSymbol = 'O';
+			currentUser = oUser;
+		} else {
+			currentSymbol = 'X';
+			currentUser = xUser;
+		}
+	} 
 }
