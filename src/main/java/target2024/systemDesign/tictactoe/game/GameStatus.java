@@ -1,7 +1,7 @@
 package target2024.systemDesign.tictactoe.game;
 
-enum GameStatus {
-	NEW,
+public enum GameStatus {
 	IN_PROGRESS,
-	COMPLETE
+	COMPLETE,
+	DRAW
 }

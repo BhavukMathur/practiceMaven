@@ -64,11 +64,13 @@ public class ProducerConsumerMain {
 
 		//Anonymous inner class
 		for(int i=0; i<consumerSize; i++) {
-			tcarr[i] = new Thread(new Runnable() {
-				public void run() {
-					pc.consume();
-				}
-			});
+//			tcarr[i] = new Thread(new Runnable() {
+//				public void run() {
+//					pc.consume();
+//				}
+//			});
+			//Using lambda
+			tcarr[i] = new Thread(() -> pc.consume());
 			tcarr[i].setName("C-" + i);
 		}
 
