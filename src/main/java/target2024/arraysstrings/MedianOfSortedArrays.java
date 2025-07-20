@@ -1,5 +1,15 @@
 package target2024.arraysstrings;
 
+
+/**Approach 3:
+- Binary Search
+- {1, 3, 4, 6, 7, 8, 9} - size1
+- {2, 5, 10} - size2
+- Step1: find middle element of arr1 --> mid1
+- Step2: Modified binary search on array2 --> return just smaller value --> mid2
+- 3. Final median index = (size1 + size2) / 2; --> finalMedian
+- 4. With mid1, mid2 --> check with finalMedian and iterate both the lists
+*/
 public class MedianOfSortedArrays {
 
 	public static void main(String[] args) {
