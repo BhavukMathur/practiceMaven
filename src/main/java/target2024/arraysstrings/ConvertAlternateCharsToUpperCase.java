@@ -1,11 +1,11 @@
-package target2024.java8;
+package target2024.arraysstrings;
 
 import javax.swing.text.IconView;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Java8Concepts {
+public class ConvertAlternateCharsToUpperCase {
 	public static void main(String[] args) {
 		String str = "hello world";
 		convertAlternateToUpperCase(str);
