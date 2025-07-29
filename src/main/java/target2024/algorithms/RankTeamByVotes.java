@@ -3,6 +3,7 @@ package target2024.algorithms;
 //https://leetcode.com/problems/rank-teams-by-votes/description/
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -50,6 +51,10 @@ public class RankTeamByVotes {
 				positionMap.get(team)[i]++;
 			}
 		}
+		
+		positionMap.forEach((k, v) -> {
+			System.out.println(k + " : " + Arrays.toString(v));
+		});
 
 		// Create a list of teams to sort
 		List<Character> teams = new ArrayList<>(positionMap.keySet());
